@@ -112,7 +112,9 @@ def draw_tab(draw_data, screen, tab, before, max_tab_length, index, is_last, ext
     if 0 <= sep_pos < screen.columns:
         screen.cursor.x = sep_pos
         screen.cursor.bg = as_rgb(color_as_int(draw_data.inactive_bg))
+        screen.cursor.bold = True
         screen.draw('\u2503')
+        screen.cursor.bold = False
 
     # Fill remaining space with inactive bg
     if is_last and screen.cursor.x < screen.columns:
