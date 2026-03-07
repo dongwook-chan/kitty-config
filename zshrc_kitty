@@ -1,0 +1,17 @@
+# zsh-shift-select
+source ~/.zsh/zsh-shift-select/zsh-shift-select.plugin.zsh
+
+# Copy selected region to system clipboard (Cmd+C in shift-select mode)
+function copy-region-to-clipboard() {
+	zle copy-region-as-kill -w
+	local encoded=$(printf '%s' "$CUTBUFFER" | base64)
+	printf '\e]52;c;%s\a' "$encoded"
+	zle deactivate-region -w
+	zle -K main
+}
+zle -N copy-region-to-clipboard
+bindkey -M shift-select '\e[67;9u' copy-region-to-clipboard
+# Ignore the sequence in normal mode (sent by kitty combine with copy_to_clipboard)
+function noop() { }
+zle -N noop
+bindkey -M emacs '\e[67;9u' noop
