@@ -15,3 +15,14 @@ bindkey -M shift-select '\e[67;9u' copy-region-to-clipboard
 function noop() { }
 zle -N noop
 bindkey -M emacs '\e[67;9u' noop
+
+# Select all (Cmd+A)
+function select-all() {
+	CURSOR=0
+	zle set-mark-command -w
+	CURSOR=${#BUFFER}
+	zle -K shift-select
+}
+zle -N select-all
+bindkey -M emacs '\e[65;9u' select-all
+bindkey -M shift-select '\e[65;9u' select-all
