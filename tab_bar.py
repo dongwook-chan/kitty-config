@@ -110,8 +110,8 @@ def draw_tab(draw_data, screen, tab, before, max_tab_length, index, is_last, ext
     # Separator gap
     if not is_last and 0 <= d_end < screen.columns:
         screen.cursor.x = d_end
-        screen.cursor.bg = as_rgb(color_as_int(draw_data.default_bg))
-        screen.draw(' ')
+        screen.cursor.bg = as_rgb(color_as_int(draw_data.inactive_bg))
+        screen.draw('\u2503')
 
     # For non-last tabs, prevent StopIteration
     if not is_last:
