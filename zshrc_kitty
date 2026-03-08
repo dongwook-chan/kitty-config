@@ -50,3 +50,10 @@ bindkey -M emacs '\e[72;10u' shift-select::select-beginning-of-line
 bindkey -M shift-select '\e[72;10u' shift-select::select-beginning-of-line
 bindkey -M emacs '\e[69;10u' shift-select::select-end-of-line
 bindkey -M shift-select '\e[69;10u' shift-select::select-end-of-line
+
+# AI CLI aliases
+alias ccy='claude --dangerously-skip-permissions'
+alias gmy='gemini --sandbox=none'
+alias cdy='codex --full-auto'
+alias omc='cd ~/omc && claude --dangerously-skip-permissions'
+alias sp='cd ~/sp && claude --dangerously-skip-permissions'
