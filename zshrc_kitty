@@ -53,7 +53,10 @@ bindkey -M shift-select '\e[69;10u' shift-select::select-end-of-line
 
 # AI CLI aliases
 alias ccy='claude --dangerously-skip-permissions'
-alias gmy='gemini --sandbox=none'
-alias cdy='codex --full-auto'
+alias gmy='gemini --yolo'
+alias cdy='codex --yolo'
+alias caosvr='cao-server'
+alias caoccy='cao launch --agents code_supervisor --provider claude_code --yolo'
+alias caocdy='cao launch --agents code_supervisor --provider codex --yolo'
 alias omc='cd ~/omc && claude --dangerously-skip-permissions'
 alias sp='cd ~/sp && claude --dangerously-skip-permissions'
