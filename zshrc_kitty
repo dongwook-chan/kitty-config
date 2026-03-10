@@ -51,6 +51,10 @@ bindkey -M shift-select '\e[72;10u' shift-select::select-beginning-of-line
 bindkey -M emacs '\e[69;10u' shift-select::select-end-of-line
 bindkey -M shift-select '\e[69;10u' shift-select::select-end-of-line
 
+# Use neovim for vi/vim
+alias vi='nvim'
+alias vim='nvim'
+
 # AI CLI aliases
 alias ccy='claude --dangerously-skip-permissions'
 alias gmy='gemini --yolo'
